@@ -8,7 +8,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	change_scene()
 	
 
 func _on_dugeon_enter_body_entered(body):
@@ -23,7 +23,7 @@ func _on_dugeon_enter_body_exited(body):
 
 func change_scene():
 	if Global.transition_scene == true:
-		if Global.current_scene == "open_scene":
+		if Global.current_scene == "open_world":
 			get_tree().change_scene_to_file("res://src/WorldScene/world_scene.tscn")
 			Global.finish_changedscene()
 		

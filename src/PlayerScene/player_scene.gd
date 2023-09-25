@@ -1,7 +1,14 @@
 extends CharacterBody2D
 
-const max_speed = 120
-const accel = 40
+var enemy_inattack_range = false
+var enemy_attack_cooldown = true
+var health = 100
+var player_isalive = true
+
+var attack_inpr = false
+
+const max_speed = 150
+const accel = 70
 const friction = 400
 
 var input : Vector2 = Vector2.ZERO
@@ -17,6 +24,15 @@ func _process(delta):
 func _physics_process(delta):
 	player_movement(delta)
 	current_camera()
+	enemy_attack()
+	update_health()
+	
+	if health <= 0:
+		player_isalive = false #go back to main_scene
+		health = 0
+		print("You have been killed")
+		self.queue_free()
+		get_tree().change_scene_to_file("res://src/MainScrene/main_scene.tscn")
 
 func get_input():
 	input.x = int(Input.is_action_pressed("ui_right") or Input.is_key_pressed(KEY_D)) - int(Input.is_action_pressed("ui_left") or Input.is_key_pressed(KEY_A))
@@ -48,6 +64,8 @@ func update_animation_parameters():
 		
 	if(Input.is_action_just_pressed("attack")):
 		animation_tree["parameters/conditions/attack"] = true
+		Global.player_current_attack = true
+		attack_inpr = true
 	else:
 		animation_tree["parameters/conditions/attack"] = false
 	
@@ -67,3 +85,46 @@ func current_camera():
 	elif Global.current_scene == "open_world":
 		$Camera2D.enabled = false
 		$Camera2D2.enabled = true
+
+
+func _on_player_hitbox_body_entered(body):
+	if body.has_method("enemy"):
+		enemy_inattack_range = true
+
+
+func _on_player_hitbox_body_exited(body):
+	if body.has_method("enemy"):
+		enemy_inattack_range = false
+
+func enemy_attack():
+	if enemy_inattack_range and enemy_attack_cooldown == true:
+		health = health - 10
+		enemy_attack_cooldown = false
+		$attack_cooldown.start()
+		print(health)
+
+func _on_attack_cooldown_timeout():
+	enemy_attack_cooldown = true
+
+
+func _on_deal_attack_timer_timeout():
+	$deal_attack_timer.stop()
+	Global.player_current_attack = false
+	attack_inpr = false
+
+func update_health():
+	var healthbar = $healthbar
+	healthbar.value = health
+	
+	if health >= 100:
+		healthbar.visible = false
+	else:
+		healthbar.visible = true
+
+func _on_regen_timer_timeout():
+	if health < 100:
+		health = health + 20
+		if health > 100:
+			health = 100
+	if health <= 0:
+		health = 0

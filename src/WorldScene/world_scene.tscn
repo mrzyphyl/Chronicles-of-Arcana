@@ -1221,13 +1221,6 @@ layer_2/y_sort_enabled = true
 layer_2/y_sort_origin = 0
 layer_2/z_index = 0
 layer_2/tile_data = PackedInt32Array(983076, 1179654, 5, 917544, 1769478, 1, 917536, 1769478, 1, 1638426, 655366, 1, 983074, 1048582, 1, 983078, 1048582, 1, 1835042, 1703942, 12, 1835046, 1703942, 12, 2162722, 1703942, 12, 2162726, 1703942, 12, 2424866, 1703942, 12, 2424870, 1703942, 12, 2555940, 65542, 10)
-layer_3/name = "ysort"
-layer_3/enabled = true
-layer_3/modulate = Color(1, 1, 1, 1)
-layer_3/y_sort_enabled = true
-layer_3/y_sort_origin = 0
-layer_3/z_index = 0
-layer_3/tile_data = PackedInt32Array()
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_v3nnw")]
 z_as_relative = true

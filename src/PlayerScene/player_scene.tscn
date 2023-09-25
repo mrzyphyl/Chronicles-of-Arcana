@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://q722va4o6f7f"]
+[gd_scene load_steps=47 format=3 uid="uid://q722va4o6f7f"]
 
 [ext_resource type="Texture2D" uid="uid://bar8agku77ohu" path="res://assets/sprites/characters/player.png" id="1_fnvij"]
 [ext_resource type="Script" path="res://src/PlayerScene/player_scene.gd" id="1_g4nyu"]
@@ -8,7 +8,7 @@ radius = 9.0
 
 [sub_resource type="Animation" id="Animation_0vc2j"]
 resource_name = "Attack_Left"
-length = 0.6
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -36,7 +36,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_i0soq"]
 resource_name = "Attack_Right"
-length = 0.7
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -64,7 +64,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_di6hc"]
 resource_name = "Attack_Top"
-length = 0.6
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -80,7 +80,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_t1g78"]
 resource_name = "Atttack_Bottom"
-length = 0.5
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -466,6 +466,9 @@ states/Walk/node = SubResource("AnimationNodeBlendSpace2D_kmjas")
 states/Walk/position = Vector2(580, 138.428)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_gpk82"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_11cni"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_2yklc"), "Idle", "Attack", SubResource("AnimationNodeStateMachineTransition_8gca4"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_5fss5"), "Walk", "Attack", SubResource("AnimationNodeStateMachineTransition_fvuwb"), "Attack", "Walk", SubResource("AnimationNodeStateMachineTransition_ldr16")]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_7x5hb"]
+radius = 34.0147
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 z_as_relative = false
 script = ExtResource("1_g4nyu")
@@ -508,3 +511,34 @@ drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
 [node name="Camera2D2" type="Camera2D" parent="."]
+
+[node name="player_hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_hitbox"]
+position = Vector2(1, -8)
+shape = SubResource("CircleShape2D_7x5hb")
+
+[node name="attack_cooldown" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="deal_attack_timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="healthbar" type="ProgressBar" parent="."]
+modulate = Color(0.12549, 0.298039, 0.0862745, 1)
+offset_left = -13.0
+offset_top = 16.0
+offset_right = 87.0
+offset_bottom = 43.0
+scale = Vector2(0.3, 0.3)
+show_percentage = false
+
+[node name="regen_timer" type="Timer" parent="."]
+wait_time = 8.0
+autostart = true
+
+[connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
+[connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]
+[connection signal="timeout" from="attack_cooldown" to="." method="_on_attack_cooldown_timeout"]
+[connection signal="timeout" from="deal_attack_timer" to="." method="_on_deal_attack_timer_timeout"]
+[connection signal="timeout" from="regen_timer" to="." method="_on_regen_timer_timeout"]
