@@ -26,4 +26,8 @@ func change_scene():
 		if Global.current_scene == "open_world":
 			get_tree().change_scene_to_file("res://src/WorldScene/world_scene.tscn")
 			Global.finish_changedscene()
-		
+
+
+func _on_portal_enter_body_entered(body):
+	get_tree().change_scene_to_file("res://src/DungeonScene/dungeon_secene.tscn")
+

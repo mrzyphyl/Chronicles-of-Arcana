@@ -19,6 +19,8 @@ func finish_changedscene():
 			current_scene = "open_world"
 		elif current_scene == "open_world":
 			current_scene = "world_scene"
+		elif current_scene == "dungeon_scene":
+			current_scene = "world_scene"
 		else:
 			current_scene = "world_scene"
 	

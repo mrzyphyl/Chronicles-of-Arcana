@@ -1,20 +1,21 @@
-[gd_scene load_steps=70 format=3 uid="uid://cqewf24ap21dr"]
+[gd_scene load_steps=71 format=3 uid="uid://40fyxg4ekhnx"]
 
-[ext_resource type="Script" path="res://src/MainScrene/main_scene.gd" id="1_vmxn1"]
-[ext_resource type="Texture2D" uid="uid://b6unwtplr7tln" path="res://assets/texture/TX Tileset Grass.png" id="2_vouoj"]
-[ext_resource type="Texture2D" uid="uid://bxd0hltxvfc14" path="res://assets/texture/TX Tileset Wall.png" id="3_iyot3"]
-[ext_resource type="Texture2D" uid="uid://down0alogbhrp" path="res://assets/texture/TX Plant.png" id="4_s5he7"]
-[ext_resource type="Texture2D" uid="uid://dbbbx4ifxpi6" path="res://assets/texture/TX Tileset Stone Ground.png" id="5_xr1ch"]
-[ext_resource type="Texture2D" uid="uid://c7jdd1fy52pu8" path="res://assets/texture/TX Shadow.png" id="6_43cie"]
-[ext_resource type="Texture2D" uid="uid://d24nbceldp5s" path="res://assets/texture/TX Shadow Plant.png" id="7_21dsv"]
-[ext_resource type="Texture2D" uid="uid://brbkec7xrmumg" path="res://assets/texture/TX Struct.png" id="8_b5qug"]
-[ext_resource type="Texture2D" uid="uid://vjid6fxr75yy" path="res://assets/texture/TX Props.png" id="9_fnmcl"]
+[ext_resource type="Texture2D" uid="uid://b6unwtplr7tln" path="res://assets/texture/TX Tileset Grass.png" id="1_6gx4k"]
+[ext_resource type="Script" path="res://src/Controls/Controls.gd" id="1_t5i0v"]
+[ext_resource type="Texture2D" uid="uid://bxd0hltxvfc14" path="res://assets/texture/TX Tileset Wall.png" id="2_xus2y"]
+[ext_resource type="Texture2D" uid="uid://down0alogbhrp" path="res://assets/texture/TX Plant.png" id="3_l72a7"]
+[ext_resource type="Texture2D" uid="uid://dbbbx4ifxpi6" path="res://assets/texture/TX Tileset Stone Ground.png" id="4_kibrq"]
+[ext_resource type="Texture2D" uid="uid://c7jdd1fy52pu8" path="res://assets/texture/TX Shadow.png" id="5_5nkia"]
+[ext_resource type="Texture2D" uid="uid://d24nbceldp5s" path="res://assets/texture/TX Shadow Plant.png" id="6_chcpn"]
+[ext_resource type="Texture2D" uid="uid://brbkec7xrmumg" path="res://assets/texture/TX Struct.png" id="7_xs1in"]
+[ext_resource type="Texture2D" uid="uid://vjid6fxr75yy" path="res://assets/texture/TX Props.png" id="8_g3bps"]
+[ext_resource type="VideoStream" path="res://assets/control_animations/movement anim.ogv" id="10_jk0oy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tg0ip"]
-atlas = ExtResource("2_vouoj")
+atlas = ExtResource("1_6gx4k")
 region = Rect2(0, 0, 128, 128)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_cylkt"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_83q4j"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -26,10 +27,10 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eeott"]
-atlas = ExtResource("3_iyot3")
+atlas = ExtResource("2_xus2y")
 region = Rect2(0, 180, 189, 90)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_t82bd"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_khvkd"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -41,10 +42,10 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8nl3h"]
-atlas = ExtResource("3_iyot3")
+atlas = ExtResource("2_xus2y")
 region = Rect2(366, 0, 122, 185)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_gywtu"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_f04qj"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -56,10 +57,10 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_31hia"]
-atlas = ExtResource("4_s5he7")
+atlas = ExtResource("3_l72a7")
 region = Rect2(0, 0, 150, 172)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_nsquk"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_cfhof"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -71,10 +72,10 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6qsc0"]
-atlas = ExtResource("5_xr1ch")
+atlas = ExtResource("4_kibrq")
 region = Rect2(0, 0, 128, 98)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_6jgg6"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_d4gbg"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -86,10 +87,10 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_80odo"]
-atlas = ExtResource("3_iyot3")
+atlas = ExtResource("2_xus2y")
 region = Rect2(0, 256, 128, 128)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ympp3"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ajo2t"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -101,10 +102,10 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ke0fm"]
-atlas = ExtResource("2_vouoj")
+atlas = ExtResource("1_6gx4k")
 region = Rect2(128, 128, 64, 64)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_cnw8h"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_v62x2"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -116,10 +117,10 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4agpr"]
-atlas = ExtResource("3_iyot3")
+atlas = ExtResource("2_xus2y")
 region = Rect2(315, 0, 63, 163)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_tke18"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_3o7mg"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -131,10 +132,10 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wjds2"]
-atlas = ExtResource("3_iyot3")
+atlas = ExtResource("2_xus2y")
 region = Rect2(369, 0, 123, 47)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_85flr"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_4c4de"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -146,10 +147,10 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_83wow"]
-atlas = ExtResource("6_43cie")
+atlas = ExtResource("5_5nkia")
 region = Rect2(279, 69, 93, 69)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_2pxna"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_hw7hf"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -161,10 +162,10 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3xol6"]
-atlas = ExtResource("7_21dsv")
+atlas = ExtResource("6_chcpn")
 region = Rect2(0, 0, 161, 163)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_fwe0b"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_1pwmu"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -176,10 +177,10 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lr65s"]
-atlas = ExtResource("5_xr1ch")
+atlas = ExtResource("4_kibrq")
 region = Rect2(0, 0, 253, 39)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ohht8"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_b6ita"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -191,10 +192,10 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dswly"]
-atlas = ExtResource("2_vouoj")
+atlas = ExtResource("1_6gx4k")
 region = Rect2(64, 128, 64, 128)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ikas6"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_8glyp"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -206,10 +207,10 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m3643"]
-atlas = ExtResource("8_b5qug")
+atlas = ExtResource("7_xs1in")
 region = Rect2(384, 0, 128, 128)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_tbsbp"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_yuquc"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -220,13 +221,13 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_vep38"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_0qcs8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_shdsj"]
-atlas = ExtResource("2_vouoj")
+atlas = ExtResource("1_6gx4k")
 region = Rect2(64, 0, 64, 64)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ltqvq"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_4wh3o"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -238,10 +239,10 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ll5vi"]
-atlas = ExtResource("5_xr1ch")
+atlas = ExtResource("4_kibrq")
 region = Rect2(192, 192, 64, 64)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_0niuv"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_sf4p1"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -253,10 +254,10 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mhuni"]
-atlas = ExtResource("8_b5qug")
+atlas = ExtResource("7_xs1in")
 region = Rect2(204, 133, 102, 133)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_p7k66"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_lv2hd"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -268,10 +269,10 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mf1us"]
-atlas = ExtResource("2_vouoj")
+atlas = ExtResource("1_6gx4k")
 region = Rect2(128, 64, 64, 64)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_fvkep"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_dd8c2"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -283,10 +284,10 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5cwdk"]
-atlas = ExtResource("9_fnmcl")
+atlas = ExtResource("8_g3bps")
 region = Rect2(425, 0, 84, 116)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_mtpch"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_av6t0"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -298,10 +299,10 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l2nss"]
-atlas = ExtResource("9_fnmcl")
+atlas = ExtResource("8_g3bps")
 region = Rect2(384, 351, 128, 117)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_qnf71"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_1rnoa"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -313,10 +314,10 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l6vfr"]
-atlas = ExtResource("2_vouoj")
+atlas = ExtResource("1_6gx4k")
 region = Rect2(128, 0, 128, 128)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_bkru5"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_dpvux"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -328,10 +329,10 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fijxu"]
-atlas = ExtResource("3_iyot3")
+atlas = ExtResource("2_xus2y")
 region = Rect2(0, 0, 148, 170)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_t5wnk"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_u8vjb"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -343,10 +344,10 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q780o"]
-atlas = ExtResource("9_fnmcl")
+atlas = ExtResource("8_g3bps")
 region = Rect2(348, 264, 116, 88)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_is8ox"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_k4blt"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -358,22 +359,22 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iildx"]
-atlas = ExtResource("9_fnmcl")
+atlas = ExtResource("8_g3bps")
 region = Rect2(329, 264, 7, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_spcqt"]
-atlas = ExtResource("9_fnmcl")
+atlas = ExtResource("8_g3bps")
 region = Rect2(336, 264, 7, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qbhhk"]
-atlas = ExtResource("9_fnmcl")
+atlas = ExtResource("8_g3bps")
 region = Rect2(329, 272, 7, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fxqji"]
-atlas = ExtResource("9_fnmcl")
+atlas = ExtResource("8_g3bps")
 region = Rect2(336, 272, 7, 8)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_jxr4a"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_oxpiq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -394,10 +395,10 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1u1eh"]
-atlas = ExtResource("9_fnmcl")
+atlas = ExtResource("8_g3bps")
 region = Rect2(336, 266, 7, 7)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_kylyw"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_xsw21"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -409,10 +410,10 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5b86x"]
-atlas = ExtResource("3_iyot3")
+atlas = ExtResource("2_xus2y")
 region = Rect2(276, 0, 92, 141)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_kbvgg"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_hs4b0"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -424,10 +425,10 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vufep"]
-atlas = ExtResource("3_iyot3")
+atlas = ExtResource("2_xus2y")
 region = Rect2(0, 182, 183, 91)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_kqepv"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_o0dtd"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -439,10 +440,10 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gon0m"]
-atlas = ExtResource("2_vouoj")
+atlas = ExtResource("1_6gx4k")
 region = Rect2(128, 192, 64, 64)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_61yi0"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_0bq7n"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -453,83 +454,62 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="MainScene" type="Node2D"]
-script = ExtResource("1_vmxn1")
-
-[node name="PlayBtn" type="Button" parent="."]
-offset_left = 426.0
-offset_top = 386.0
-offset_right = 711.0
-offset_bottom = 456.0
-text = "Play"
-
-[node name="QuitBtn" type="Button" parent="."]
-offset_left = 426.0
-offset_top = 544.0
-offset_right = 711.0
-offset_bottom = 614.0
-text = "Quit"
-
-[node name="Controls" type="Button" parent="."]
-offset_left = 426.0
-offset_top = 466.0
-offset_right = 711.0
-offset_bottom = 536.0
-text = "Controls"
+[node name="Controls" type="Node2D"]
+script = ExtResource("1_t5i0v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 show_behind_parent = true
 position = Vector2(138, 530)
 scale = Vector2(2.13184, 1.87598)
-sprite_frames = SubResource("SpriteFrames_cylkt")
+sprite_frames = SubResource("SpriteFrames_83q4j")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 position = Vector2(134.625, 578)
 scale = Vector2(2.12037, 2.24444)
-sprite_frames = SubResource("SpriteFrames_t82bd")
+sprite_frames = SubResource("SpriteFrames_khvkd")
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
 position = Vector2(122.25, 287)
 scale = Vector2(2.94672, 1.85676)
-sprite_frames = SubResource("SpriteFrames_gywtu")
+sprite_frames = SubResource("SpriteFrames_f04qj")
 
 [node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
 position = Vector2(18, 426)
-sprite_frames = SubResource("SpriteFrames_nsquk")
+sprite_frames = SubResource("SpriteFrames_cfhof")
 
 [node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="."]
 position = Vector2(86.625, 271)
 scale = Vector2(1.16211, 0.418368)
-sprite_frames = SubResource("SpriteFrames_6jgg6")
+sprite_frames = SubResource("SpriteFrames_d4gbg")
 
 [node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="."]
 top_level = true
 position = Vector2(218, 322)
 scale = Vector2(1.57813, 2.73437)
-sprite_frames = SubResource("SpriteFrames_ympp3")
+sprite_frames = SubResource("SpriteFrames_ajo2t")
 
 [node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="."]
 show_behind_parent = true
 position = Vector2(364, 563)
 scale = Vector2(2.72656, 2.73438)
-sprite_frames = SubResource("SpriteFrames_cnw8h")
+sprite_frames = SubResource("SpriteFrames_v62x2")
 
 [node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="."]
 position = Vector2(278, 579.875)
 scale = Vector2(1, 1.54448)
-sprite_frames = SubResource("SpriteFrames_tke18")
+sprite_frames = SubResource("SpriteFrames_3o7mg")
 
 [node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="."]
 position = Vector2(291, 456.528)
 rotation = 1.5708
 scale = Vector2(1.00767, 1)
-sprite_frames = SubResource("SpriteFrames_85flr")
+sprite_frames = SubResource("SpriteFrames_4c4de")
 
 [node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="."]
 top_level = true
 position = Vector2(272, 326)
 scale = Vector2(1, 1.79141)
-sprite_frames = SubResource("SpriteFrames_tke18")
+sprite_frames = SubResource("SpriteFrames_3o7mg")
 
 [node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.305882)
@@ -541,19 +521,19 @@ visibility_layer = 512
 position = Vector2(300.909, 518.961)
 rotation = 1.5708
 scale = Vector2(4.55216, 1.25823)
-sprite_frames = SubResource("SpriteFrames_2pxna")
+sprite_frames = SubResource("SpriteFrames_hw7hf")
 
 [node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.27451)
 show_behind_parent = true
 top_level = true
 position = Vector2(13, 445)
-sprite_frames = SubResource("SpriteFrames_fwe0b")
+sprite_frames = SubResource("SpriteFrames_1pwmu")
 
 [node name="AnimatedSprite2D13" type="AnimatedSprite2D" parent="."]
 position = Vector2(136.625, 212.25)
 scale = Vector2(1.09387, 1.16667)
-sprite_frames = SubResource("SpriteFrames_ohht8")
+sprite_frames = SubResource("SpriteFrames_b6ita")
 
 [node name="AnimatedSprite2D14" type="AnimatedSprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.305882)
@@ -565,7 +545,7 @@ visibility_layer = 512
 position = Vector2(191.01, 339.251)
 rotation = 1.5708
 scale = Vector2(2.38797, 1.56458)
-sprite_frames = SubResource("SpriteFrames_2pxna")
+sprite_frames = SubResource("SpriteFrames_hw7hf")
 
 [node name="AnimatedSprite2D14" type="AnimatedSprite2D" parent="AnimatedSprite2D14"]
 modulate = Color(1, 1, 1, 0.305882)
@@ -577,27 +557,27 @@ visibility_layer = 512
 position = Vector2(191.01, 339.251)
 rotation = 1.5708
 scale = Vector2(2.38797, 1.56458)
-sprite_frames = SubResource("SpriteFrames_2pxna")
+sprite_frames = SubResource("SpriteFrames_hw7hf")
 
 [node name="AnimatedSprite2D15" type="AnimatedSprite2D" parent="."]
 show_behind_parent = true
 position = Vector2(557, 484)
 scale = Vector2(3.30469, 2.61719)
-sprite_frames = SubResource("SpriteFrames_ikas6")
+sprite_frames = SubResource("SpriteFrames_8glyp")
 
 [node name="AnimatedSprite2D16" type="AnimatedSprite2D" parent="."]
 position = Vector2(364, 420)
 scale = Vector2(2.67188, 2.10156)
-sprite_frames = SubResource("SpriteFrames_tbsbp")
+sprite_frames = SubResource("SpriteFrames_yuquc")
 
 [node name="AnimatedSprite2D17" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_vep38")
+sprite_frames = SubResource("SpriteFrames_0qcs8")
 
 [node name="AnimatedSprite2D19" type="AnimatedSprite2D" parent="."]
 show_behind_parent = true
 position = Vector2(364, 430.5)
 scale = Vector2(1.28125, 1.42187)
-sprite_frames = SubResource("SpriteFrames_ltqvq")
+sprite_frames = SubResource("SpriteFrames_4wh3o")
 
 [node name="AnimatedSprite2D20" type="AnimatedSprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.882353)
@@ -607,17 +587,17 @@ light_mask = 512
 visibility_layer = 512
 position = Vector2(369.5, 395)
 scale = Vector2(1.30108, 1.56458)
-sprite_frames = SubResource("SpriteFrames_2pxna")
+sprite_frames = SubResource("SpriteFrames_hw7hf")
 
 [node name="AnimatedSprite2D18" type="AnimatedSprite2D" parent="."]
 position = Vector2(374, 256)
 scale = Vector2(3.03125, 2.6875)
-sprite_frames = SubResource("SpriteFrames_0niuv")
+sprite_frames = SubResource("SpriteFrames_sf4p1")
 
 [node name="AnimatedSprite2D21" type="AnimatedSprite2D" parent="."]
 position = Vector2(548, 231.375)
 scale = Vector2(2.53922, 1.53947)
-sprite_frames = SubResource("SpriteFrames_p7k66")
+sprite_frames = SubResource("SpriteFrames_lv2hd")
 
 [node name="AnimatedSprite2D22" type="AnimatedSprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.305882)
@@ -629,72 +609,87 @@ visibility_layer = 512
 position = Vector2(482, 343)
 rotation = 1.5708
 scale = Vector2(2.42856, 2.68628)
-sprite_frames = SubResource("SpriteFrames_2pxna")
+sprite_frames = SubResource("SpriteFrames_hw7hf")
 
 [node name="AnimatedSprite2D23" type="AnimatedSprite2D" parent="."]
 show_behind_parent = true
 position = Vector2(781, 552)
 scale = Vector2(3.8125, 3.125)
-sprite_frames = SubResource("SpriteFrames_fvkep")
+sprite_frames = SubResource("SpriteFrames_dd8c2")
 
 [node name="AnimatedSprite2D24" type="AnimatedSprite2D" parent="."]
 show_behind_parent = true
 position = Vector2(259, 469)
-sprite_frames = SubResource("SpriteFrames_mtpch")
+sprite_frames = SubResource("SpriteFrames_av6t0")
 
 [node name="AnimatedSprite2D25" type="AnimatedSprite2D" parent="."]
 position = Vector2(319, 671)
 scale = Vector2(1.27344, 1.33547)
-sprite_frames = SubResource("SpriteFrames_qnf71")
+sprite_frames = SubResource("SpriteFrames_1rnoa")
 
 [node name="AnimatedSprite2D26" type="AnimatedSprite2D" parent="."]
 position = Vector2(1000, 352.5)
 scale = Vector2(2.14063, 1.44531)
-sprite_frames = SubResource("SpriteFrames_bkru5")
+sprite_frames = SubResource("SpriteFrames_dpvux")
 
 [node name="AnimatedSprite2D27" type="AnimatedSprite2D" parent="."]
 position = Vector2(979, 410)
 scale = Vector2(3.31081, 3.17647)
-sprite_frames = SubResource("SpriteFrames_t5wnk")
+sprite_frames = SubResource("SpriteFrames_u8vjb")
 
 [node name="AnimatedSprite2D28" type="AnimatedSprite2D" parent="."]
 position = Vector2(1015, 362)
 scale = Vector2(1.77586, 1.94318)
-sprite_frames = SubResource("SpriteFrames_is8ox")
+sprite_frames = SubResource("SpriteFrames_k4blt")
 
 [node name="AnimatedSprite2D29" type="AnimatedSprite2D" parent="."]
 position = Vector2(936, 348.526)
 scale = Vector2(-1.69839, 1.88739)
-sprite_frames = SubResource("SpriteFrames_jxr4a")
+sprite_frames = SubResource("SpriteFrames_oxpiq")
 
 [node name="AnimatedSprite2D30" type="AnimatedSprite2D" parent="."]
 position = Vector2(1006, 299)
 scale = Vector2(1.92857, 2.07143)
-sprite_frames = SubResource("SpriteFrames_kylyw")
+sprite_frames = SubResource("SpriteFrames_xsw21")
 
 [node name="AnimatedSprite2D31" type="AnimatedSprite2D" parent="."]
 position = Vector2(291.082, 90.1675)
 rotation = 1.5708
 scale = Vector2(2.81107, 5.08757)
-sprite_frames = SubResource("SpriteFrames_kbvgg")
+sprite_frames = SubResource("SpriteFrames_hs4b0")
 
 [node name="AnimatedSprite2D31" type="AnimatedSprite2D" parent="AnimatedSprite2D31"]
 position = Vector2(0.327896, -126.84)
 scale = Vector2(1.02589, 1.09894)
-sprite_frames = SubResource("SpriteFrames_kbvgg")
+sprite_frames = SubResource("SpriteFrames_hs4b0")
 
 [node name="AnimatedSprite2D32" type="AnimatedSprite2D" parent="."]
 show_behind_parent = true
 position = Vector2(874, 255)
 scale = Vector2(4.05465, 2.26923)
-sprite_frames = SubResource("SpriteFrames_kqepv")
+sprite_frames = SubResource("SpriteFrames_o0dtd")
 
 [node name="AnimatedSprite2D33" type="AnimatedSprite2D" parent="."]
 show_behind_parent = true
 position = Vector2(755, 388.5)
 scale = Vector2(3.03125, 2.14063)
-sprite_frames = SubResource("SpriteFrames_61yi0")
+sprite_frames = SubResource("SpriteFrames_0bq7n")
 
-[connection signal="pressed" from="PlayBtn" to="." method="_on_play_btn_pressed"]
-[connection signal="pressed" from="QuitBtn" to="." method="_on_quit_btn_pressed"]
-[connection signal="pressed" from="Controls" to="." method="_on_controls_pressed"]
+[node name="Back" type="Button" parent="."]
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 228.0
+offset_bottom = 73.0
+text = "Back
+"
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+top_level = true
+offset_left = 268.0
+offset_top = 117.0
+offset_right = 908.0
+offset_bottom = 485.0
+stream = ExtResource("10_jk0oy")
+autoplay = true
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

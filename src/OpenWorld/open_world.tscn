@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dq73r4vsp0iaj"]
+[gd_scene load_steps=31 format=3 uid="uid://dq73r4vsp0iaj"]
 
 [ext_resource type="Script" path="res://src/OpenWorld/open_world.gd" id="1_uskcm"]
 [ext_resource type="PackedScene" uid="uid://q722va4o6f7f" path="res://src/PlayerScene/player_scene.tscn" id="2_6duwf"]
@@ -3266,6 +3266,9 @@ sources/11 = SubResource("TileSetAtlasSource_bdajp")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_co8ch"]
 size = Vector2(45, 33)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_wd16a"]
+radius = 15.0333
+
 [node name="Open World" type="Node2D"]
 script = ExtResource("1_uskcm")
 
@@ -3387,5 +3390,13 @@ polygon = PackedVector2Array(-1, 1, 290, -179, 293, 16, 284, 477, 188, 1106, -19
 position = Vector2(-32, 1293)
 polygon = PackedVector2Array(-1, 0, 2, 163, 510, 112, 510, 112, 721, 154, 1126, 205, 1258, 349, 1309, 6, 805, 3)
 
+[node name="PortalEnter" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PortalEnter"]
+z_index = 30
+position = Vector2(569, -536)
+shape = SubResource("CircleShape2D_wd16a")
+
 [connection signal="body_entered" from="DugeonEnter" to="." method="_on_dugeon_enter_body_entered"]
 [connection signal="body_exited" from="DugeonEnter" to="." method="_on_dugeon_enter_body_exited"]
+[connection signal="body_entered" from="PortalEnter" to="." method="_on_portal_enter_body_entered"]

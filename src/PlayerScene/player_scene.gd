@@ -31,8 +31,9 @@ func _physics_process(delta):
 		player_isalive = false #go back to main_scene
 		health = 0
 		print("You have been killed")
+		$AnimationPlayer.play("Down")
 		self.queue_free()
-		get_tree().change_scene_to_file("res://src/MainScrene/main_scene.tscn")
+		#get_tree().change_scene_to_file("res://src/MainScrene/main_scene.tscn")
 
 func get_input():
 	input.x = int(Input.is_action_pressed("ui_right") or Input.is_key_pressed(KEY_D)) - int(Input.is_action_pressed("ui_left") or Input.is_key_pressed(KEY_A))
@@ -82,18 +83,18 @@ func player():
 func current_camera():
 	if Global.current_scene == "world_scene":
 		$Camera2D.enabled = true
-	elif Global.current_scene == "open_world":
+	elif Global.current_scene == "open_world" and "dungeon_sence":
 		$Camera2D.enabled = false
 		$Camera2D2.enabled = true
 
 
 func _on_player_hitbox_body_entered(body):
-	if body.has_method("enemy"):
+	if body.has_method("enemy") or body.has_method("skeleton"):
 		enemy_inattack_range = true
 
 
 func _on_player_hitbox_body_exited(body):
-	if body.has_method("enemy"):
+	if body.has_method("enemy") or body.has_method("skeleton"):
 		enemy_inattack_range = false
 
 func enemy_attack():
@@ -128,3 +129,7 @@ func _on_regen_timer_timeout():
 			health = 100
 	if health <= 0:
 		health = 0
+
+
+func _on_area_2d_body_entered(body):
+	get_tree().change_scene_to_file("res://src/OpenWorld/open_world.tscn")

@@ -96,8 +96,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_nfm8q"]
 resource_name = "Down"
-length = 0.6
-loop_mode = 1
+length = 0.8
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -525,7 +524,7 @@ wait_time = 2.0
 wait_time = 0.5
 
 [node name="healthbar" type="ProgressBar" parent="."]
-modulate = Color(0.12549, 0.298039, 0.0862745, 1)
+modulate = Color(0.333333, 0.737255, 0.239216, 1)
 offset_left = -13.0
 offset_top = 16.0
 offset_right = 87.0
