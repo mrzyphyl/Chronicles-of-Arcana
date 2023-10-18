@@ -10,4 +10,4 @@ func _on_play_btn_pressed():
 
 
 func _on_controls_pressed():
-	get_tree().change_scene_to_file("res://src/Controls/Controls.tscn")
+	get_tree().change_scene_to_file("res://src/Controller/ui/OnScreenKeyboard.tscn")

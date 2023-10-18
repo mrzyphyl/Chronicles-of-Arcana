@@ -1,0 +1,99 @@
+[gd_scene load_steps=10 format=3 uid="uid://bhubftwaeeng2"]
+
+[ext_resource type="Texture2D" uid="uid://cct5q1xrvxt1g" path="res://src/Controller/ui/arrows/Up.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://bct3p3n4ftuj5" path="res://src/Controller/ui/arrows/Down.png" id="2"]
+[ext_resource type="PackedScene" uid="uid://q722va4o6f7f" path="res://src/PlayerScene/player_scene.tscn" id="2_bsey2"]
+[ext_resource type="Texture2D" uid="uid://1wxw8tetxaf6" path="res://src/Controller/ui/arrows/Left.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://uk3rvjgh18sb" path="res://src/Controller/ui/arrows/Right.png" id="4"]
+[ext_resource type="Script" path="res://src/Controller/ui/OnScreenKeyboard.gd" id="5"]
+[ext_resource type="FontFile" uid="uid://byoc2ndsx7cer" path="res://src/Controller/ui/nokiafc22.ttf" id="6_c3y84"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0b04o"]
+size = Vector2(1172, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gahqd"]
+size = Vector2(24, 668)
+
+[node name="OnScreenKeyboard" type="CanvasLayer"]
+script = ExtResource("5")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_bsey2")]
+position = Vector2(577, 327)
+
+[node name="Keys" type="Node2D" parent="."]
+position = Vector2(4, -3)
+
+[node name="Up" type="Sprite2D" parent="Keys"]
+position = Vector2(216, 457.383)
+scale = Vector2(6, 6.059)
+texture = ExtResource("1")
+hframes = 2
+
+[node name="Down" type="Sprite2D" parent="Keys"]
+position = Vector2(214, 548.384)
+scale = Vector2(6, 5.246)
+texture = ExtResource("2")
+hframes = 2
+
+[node name="Left" type="Sprite2D" parent="Keys"]
+position = Vector2(90, 549.384)
+scale = Vector2(6, 5.573)
+texture = ExtResource("3")
+hframes = 2
+
+[node name="Right" type="Sprite2D" parent="Keys"]
+position = Vector2(336, 547.383)
+scale = Vector2(6, 5.808)
+texture = ExtResource("4")
+hframes = 2
+
+[node name="InputX" type="Label" parent="."]
+offset_left = 1092.0
+offset_top = 588.0
+offset_right = 1155.0
+offset_bottom = 632.0
+theme_override_fonts/font = ExtResource("6_c3y84")
+text = "x: 0.0"
+
+[node name="InputY" type="Label" parent="."]
+offset_left = 1092.0
+offset_top = 574.0
+offset_right = 1129.0
+offset_bottom = 600.0
+theme_override_fonts/font = ExtResource("6_c3y84")
+text = "y: 0.0"
+
+[node name="WASD" type="Label" parent="."]
+offset_left = 34.0
+offset_top = 602.0
+offset_right = 409.0
+offset_bottom = 628.0
+theme_override_fonts/font = ExtResource("6_c3y84")
+text = "Click on WASD to move from left, right, up and down"
+
+[node name="Attack" type="Label" parent="."]
+offset_left = 746.0
+offset_top = 316.0
+offset_right = 1038.0
+offset_bottom = 493.0
+theme_override_fonts/font = ExtResource("6_c3y84")
+text = "Click your left mouse button to attack
+                          "
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(576, 0)
+shape = SubResource("RectangleShape2D_0b04o")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(575, 649)
+shape = SubResource("RectangleShape2D_0b04o")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2, 324)
+shape = SubResource("RectangleShape2D_gahqd")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1151, 324)
+shape = SubResource("RectangleShape2D_gahqd")
