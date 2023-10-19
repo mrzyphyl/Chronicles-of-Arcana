@@ -13,6 +13,19 @@ const friction = 400
 
 var input : Vector2 = Vector2.ZERO
 
+var chest_e1 = false
+var chest_e2 = false
+var chest_e3 = false
+var chest_e4 = false
+
+var chest_h1 = false
+var chest_h2 = false
+var chest_h3 = false
+var chest_h4 = false
+var chest_h5 = false
+var chest_h6 = false
+var chest_h7 = false
+
 @onready var animation_tree: AnimationTree = $AnimationTree
 
 func _ready():
@@ -34,6 +47,56 @@ func _physics_process(delta):
 		$AnimationPlayer.play("Down")
 		self.queue_free()
 		#get_tree().change_scene_to_file("res://src/MainScrene/main_scene.tscn")
+	
+	if chest_e1 == true:
+		if Input.is_action_just_pressed("ui_accept"):
+			DialogueManager.show_example_dialogue_balloon(load("res://questions/easyquestion_1.dialogue"), "eq1")
+			return
+	
+	if chest_e2 == true:
+		if Input.is_action_just_pressed("ui_accept"):
+			DialogueManager.show_example_dialogue_balloon(load("res://questions/easyquestion_2.dialogue"), "eq2")
+			return
+	
+	if chest_e3 == true:
+		if Input.is_action_just_pressed("ui_accept"):
+			DialogueManager.show_example_dialogue_balloon(load("res://questions/easyquestion_3.dialogue"), "eq3")
+			return
+	
+	if chest_e4 == true:
+		if Input.is_action_just_pressed("ui_accept"):
+			DialogueManager.show_example_dialogue_balloon(load("res://questions/easyquestion_4.dialogue"), "eq4")
+			return
+	
+	if chest_h1 == true:
+		if Input.is_action_just_pressed("ui_accept"):
+			DialogueManager.show_example_dialogue_balloon(load("res://questions/hardquestion_1.dialogue"), "hq1")
+			return
+	
+	if chest_h2 == true:
+		if Input.is_action_just_pressed("ui_accept"):
+			DialogueManager.show_example_dialogue_balloon(load("res://questions/hardquestion_2.dialogue"), "hq2")
+			return
+	
+	if chest_h3 == true:
+		if Input.is_action_just_pressed("ui_accept"):
+			DialogueManager.show_example_dialogue_balloon(load("res://questions/hardquestion_3.dialogue"), "hq3")
+			return
+	
+	if chest_h4 == true:
+		if Input.is_action_just_pressed("ui_accept"):
+			DialogueManager.show_example_dialogue_balloon(load("res://questions/hardquestion_4.dialogue"), "hq4")
+			return
+	
+	if chest_h5 == true:
+		if Input.is_action_just_pressed("ui_accept"):
+			DialogueManager.show_example_dialogue_balloon(load("res://questions/hardquestion_5.dialogue"), "hq5")
+			return
+	
+	if chest_h6 == true:
+		if Input.is_action_just_pressed("ui_accept"):
+			DialogueManager.show_example_dialogue_balloon(load("res://questions/hardquestion_6.dialogue"), "hq6")
+			return
 
 func get_input():
 	input.x = int(Input.is_action_pressed("ui_right") or Input.is_key_pressed(KEY_D)) - int(Input.is_action_pressed("ui_left") or Input.is_key_pressed(KEY_A))
@@ -92,10 +155,77 @@ func _on_player_hitbox_body_entered(body):
 	if body.has_method("enemy") or body.has_method("skeleton"):
 		enemy_inattack_range = true
 
+	if body.has_method("cheste1"):
+		chest_e1 = true
+
+	if body.has_method("cheste2"):
+		chest_e2 = true
+
+	if body.has_method("cheste3"):
+		chest_e3 = true
+
+	if body.has_method("cheste4"):
+		chest_e4 = true
+
+	if body.has_method("chesth1"):
+		chest_h1 = true
+
+	if body.has_method("chesth2"):
+		chest_h2 = true
+
+	if body.has_method("chesth3"):
+		chest_h3 = true
+
+	if body.has_method("chesth4"):
+		chest_h4 = true
+
+	if body.has_method("chesth5"):
+		chest_h5 = true
+
+	if body.has_method("chesth6"):
+		chest_h6 = true
+
+	if body.has_method("chesth7"):
+		chest_h7 = true
+
+
 
 func _on_player_hitbox_body_exited(body):
 	if body.has_method("enemy") or body.has_method("skeleton"):
 		enemy_inattack_range = false
+
+	if body.has_method("cheste1"):
+		chest_e1 = false
+	
+	if body.has_method("cheste2"):
+		chest_e2 = false
+
+	if body.has_method("cheste3"):
+		chest_e3 = false
+
+	if body.has_method("cheste4"):
+		chest_e4 = false
+
+	if body.has_method("chesth1"):
+		chest_h1 = true
+
+	if body.has_method("chesth2"):
+		chest_h2 = true
+
+	if body.has_method("chesth3"):
+		chest_h3 = true
+
+	if body.has_method("chesth4"):
+		chest_h4 = true
+
+	if body.has_method("chesth5"):
+		chest_h5 = true
+
+	if body.has_method("chesth6"):
+		chest_h6 = true
+
+	if body.has_method("chesth7"):
+		chest_h7 = true
 
 func enemy_attack():
 	if enemy_inattack_range and enemy_attack_cooldown == true:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://d3poyxv64beun"]
+[gd_scene load_steps=30 format=3 uid="uid://d3poyxv64beun"]
 
 [ext_resource type="PackedScene" uid="uid://q722va4o6f7f" path="res://src/PlayerScene/player_scene.tscn" id="1_kvi1y"]
 [ext_resource type="Texture2D" uid="uid://d2bp7sdjexs2c" path="res://assets/sprites/tilesets/floor/wooden.png" id="3_ib446"]
@@ -9,8 +9,13 @@
 [ext_resource type="Texture2D" uid="uid://c7jdd1fy52pu8" path="res://assets/texture/TX Shadow.png" id="8_itn8k"]
 [ext_resource type="Texture2D" uid="uid://dxtyu0sutb27y" path="res://assets/sprites/objects/chest_01.png" id="9_gbo6w"]
 [ext_resource type="Texture2D" uid="uid://bdpy1or3bwms" path="res://assets/sprites/objects/chest_02.png" id="10_ew66e"]
-[ext_resource type="PackedScene" uid="uid://lob7ttekmxp4" path="res://src/ChestScene/chest.tscn" id="11_41b1x"]
+[ext_resource type="PackedScene" uid="uid://lob7ttekmxp4" path="res://src/ChestScene/hardchest4/chesth4.tscn" id="11_41b1x"]
 [ext_resource type="PackedScene" uid="uid://b7r23or7517si" path="res://src/EnemyScene/skeleton_scene.tscn" id="11_xvyvh"]
+[ext_resource type="Script" path="res://src/ChestScene/hardchest1/chesth1.gd" id="12_8udrr"]
+[ext_resource type="Script" path="res://src/ChestScene/hardchest2/chesth2.gd" id="13_0clqh"]
+[ext_resource type="Script" path="res://src/ChestScene/hardchest3/chesth3.gd" id="14_ynyhd"]
+[ext_resource type="Script" path="res://src/ChestScene/hardchest5/chesth5.gd" id="15_4gitd"]
+[ext_resource type="Script" path="res://src/ChestScene/hardchest6/chesth6.gd" id="16_jqc3f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8guct"]
 
@@ -2531,7 +2536,8 @@ layer_4/y_sort_origin = 0
 layer_4/z_index = 0
 layer_4/tile_data = PackedInt32Array(393252, 1441798, 16, 393247, 917510, 5, 393257, 917510, 5, 65569, 917510, 5, 65575, 917510, 5, 458783, 1048582, 6, 458793, 1048582, 6, 131105, 1048582, 6, 131111, 1048582, 6)
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_kvi1y")]
+[node name="CharacterBody2D" parent="TileMap" instance=ExtResource("1_kvi1y")]
+z_index = 10
 z_as_relative = true
 y_sort_enabled = true
 position = Vector2(586, 171)
@@ -2589,24 +2595,32 @@ position = Vector2(584, 103)
 shape = SubResource("CircleShape2D_u07ri")
 
 [node name="Chest" parent="." instance=ExtResource("11_41b1x")]
+y_sort_enabled = true
 position = Vector2(181, 51)
+script = ExtResource("12_8udrr")
 
 [node name="Chest2" parent="." instance=ExtResource("11_41b1x")]
+y_sort_enabled = true
 position = Vector2(-628, 68)
+script = ExtResource("13_0clqh")
 
 [node name="Chest3" parent="." instance=ExtResource("11_41b1x")]
+y_sort_enabled = true
 position = Vector2(291, -684)
+script = ExtResource("14_ynyhd")
 
 [node name="Chest4" parent="." instance=ExtResource("11_41b1x")]
+y_sort_enabled = true
 position = Vector2(1656, -440)
 
 [node name="Chest5" parent="." instance=ExtResource("11_41b1x")]
+y_sort_enabled = true
 position = Vector2(2144, 373)
+script = ExtResource("15_4gitd")
 
 [node name="Chest6" parent="." instance=ExtResource("11_41b1x")]
+y_sort_enabled = true
 position = Vector2(83, 1358)
+script = ExtResource("16_jqc3f")
 
-[node name="Chest7" parent="." instance=ExtResource("11_41b1x")]
-position = Vector2(1725, 1279)
-
-[connection signal="body_entered" from="Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D" to="TileMap/CharacterBody2D" method="_on_area_2d_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dq73r4vsp0iaj"]
+[gd_scene load_steps=35 format=3 uid="uid://dq73r4vsp0iaj"]
 
 [ext_resource type="Script" path="res://src/OpenWorld/open_world.gd" id="1_uskcm"]
 [ext_resource type="PackedScene" uid="uid://q722va4o6f7f" path="res://src/PlayerScene/player_scene.tscn" id="2_6duwf"]
@@ -14,7 +14,11 @@
 [ext_resource type="Texture2D" uid="uid://brbkec7xrmumg" path="res://assets/texture/TX Struct.png" id="12_higuy"]
 [ext_resource type="Texture2D" uid="uid://dbbbx4ifxpi6" path="res://assets/texture/TX Tileset Stone Ground.png" id="13_d0egx"]
 [ext_resource type="PackedScene" uid="uid://dtjstxt1awftg" path="res://src/EnemyScene/enemy_scene.tscn" id="15_psu5b"]
-[ext_resource type="PackedScene" uid="uid://lob7ttekmxp4" path="res://src/ChestScene/chest.tscn" id="15_trk1h"]
+[ext_resource type="PackedScene" uid="uid://bf54re7q6elsq" path="res://src/ChestScene/easychest2/cheste2.tscn" id="16_b2jpu"]
+[ext_resource type="Script" path="res://src/ChestScene/easychest1/cheste1.gd" id="16_lcf7h"]
+[ext_resource type="Script" path="res://src/ChestScene/easychest3/cheste3.gd" id="18_fkh01"]
+[ext_resource type="PackedScene" uid="uid://lob7ttekmxp4" path="res://src/ChestScene/hardchest4/chesth4.tscn" id="18_suttd"]
+[ext_resource type="Script" path="res://src/ChestScene/easychest4/cheste4.gd" id="19_a76dh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eowld"]
 texture = ExtResource("3_2vkcr")
@@ -3336,17 +3340,20 @@ z_index = 30
 position = Vector2(569, -536)
 shape = SubResource("CircleShape2D_wd16a")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("15_trk1h")]
-position = Vector2(105, 657)
+[node name="ChestE1" parent="." instance=ExtResource("18_suttd")]
+position = Vector2(1096, 781)
+script = ExtResource("16_lcf7h")
 
-[node name="CharacterBody2D2" parent="." instance=ExtResource("15_trk1h")]
-position = Vector2(1222, -265)
+[node name="CharacterBody2D" parent="." instance=ExtResource("16_b2jpu")]
+position = Vector2(1253, -346)
 
-[node name="CharacterBody2D3" parent="." instance=ExtResource("15_trk1h")]
-position = Vector2(-166, -309)
+[node name="CharacterBody2D2" parent="." instance=ExtResource("18_suttd")]
+position = Vector2(-144, 705)
+script = ExtResource("18_fkh01")
 
-[node name="CharacterBody2D4" parent="." instance=ExtResource("15_trk1h")]
-position = Vector2(1405, 947)
+[node name="CharacterBody2D3" parent="." instance=ExtResource("18_suttd")]
+position = Vector2(-85, -323)
+script = ExtResource("19_a76dh")
 
 [connection signal="body_entered" from="DugeonEnter" to="." method="_on_dugeon_enter_body_entered"]
 [connection signal="body_exited" from="DugeonEnter" to="." method="_on_dugeon_enter_body_exited"]
