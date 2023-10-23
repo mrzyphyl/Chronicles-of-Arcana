@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bf54re7q6elsq" path="res://src/ChestScene/easychest2/cheste2.tscn" id="16_b2jpu"]
 [ext_resource type="Script" path="res://src/ChestScene/easychest1/cheste1.gd" id="16_lcf7h"]
 [ext_resource type="Script" path="res://src/ChestScene/easychest3/cheste3.gd" id="18_fkh01"]
-[ext_resource type="PackedScene" uid="uid://lob7ttekmxp4" path="res://src/ChestScene/hardchest4/chesth4.tscn" id="18_suttd"]
+[ext_resource type="PackedScene" uid="uid://lob7ttekmxp4" path="res://src/ChestScene/hardchest6/chesth6.tscn" id="18_suttd"]
 [ext_resource type="Script" path="res://src/ChestScene/easychest4/cheste4.gd" id="19_a76dh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eowld"]

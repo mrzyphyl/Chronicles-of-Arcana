@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://0c7p0q0hhvut"]
+
+[ext_resource type="PackedScene" uid="uid://q722va4o6f7f" path="res://src/PlayerScene/player_scene.tscn" id="1_4ds2i"]
+[ext_resource type="PackedScene" uid="uid://gsuytl5hiv0r" path="res://src/BossScence/boss_enemy.tscn" id="2_wcyej"]
+
+[node name="Boss Battle" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_4ds2i")]
+position = Vector2(1071, 573)
+
+[node name="CharacterBody2D2" parent="." instance=ExtResource("2_wcyej")]
+position = Vector2(586, 270)

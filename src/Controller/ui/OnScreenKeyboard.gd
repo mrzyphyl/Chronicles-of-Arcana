@@ -24,3 +24,7 @@ func _process(delta):
 		$Keys/Right.frame = 1
 	elif Input.is_action_just_released("ui_right"):
 		$Keys/Right.frame = 0
+
+
+func _on_back_pressed():
+	get_tree().change_scene_to_file("res://src/MainScrene/main_scene.tscn")

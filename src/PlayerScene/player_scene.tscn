@@ -536,6 +536,9 @@ show_percentage = false
 wait_time = 8.0
 autostart = true
 
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(18, -14)
+
 [connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]
 [connection signal="timeout" from="attack_cooldown" to="." method="_on_attack_cooldown_timeout"]

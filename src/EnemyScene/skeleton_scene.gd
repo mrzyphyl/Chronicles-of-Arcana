@@ -33,7 +33,7 @@ func _on_detection_body_exited(body):
 	player = null
 	player_chase = false
 
-func skeleton():
+func boss():
 	pass
 
 

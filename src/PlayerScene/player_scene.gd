@@ -24,9 +24,16 @@ var chest_h3 = false
 var chest_h4 = false
 var chest_h5 = false
 var chest_h6 = false
-var chest_h7 = false
+
+var potion = preload("res://src/PotionFallingScene/potion.tscn")
+
 
 @onready var animation_tree: AnimationTree = $AnimationTree
+
+func drop_potion():
+	var potion_instance = potion.instantiate()
+	potion_instance.global_position = $Marker2D.global_position
+	get_parent().add_child(potion_instance)
 
 func _ready():
 	animation_tree.active = true
@@ -47,55 +54,65 @@ func _physics_process(delta):
 		$AnimationPlayer.play("Down")
 		self.queue_free()
 		#get_tree().change_scene_to_file("res://src/MainScrene/main_scene.tscn")
-	
+
 	if chest_e1 == true:
 		if Input.is_action_just_pressed("ui_accept"):
 			DialogueManager.show_example_dialogue_balloon(load("res://questions/easyquestion_1.dialogue"), "eq1")
+			drop_potion()
 			return
 	
 	if chest_e2 == true:
 		if Input.is_action_just_pressed("ui_accept"):
 			DialogueManager.show_example_dialogue_balloon(load("res://questions/easyquestion_2.dialogue"), "eq2")
+			drop_potion()
 			return
 	
 	if chest_e3 == true:
 		if Input.is_action_just_pressed("ui_accept"):
 			DialogueManager.show_example_dialogue_balloon(load("res://questions/easyquestion_3.dialogue"), "eq3")
+			drop_potion()
 			return
 	
 	if chest_e4 == true:
 		if Input.is_action_just_pressed("ui_accept"):
 			DialogueManager.show_example_dialogue_balloon(load("res://questions/easyquestion_4.dialogue"), "eq4")
+			drop_potion()
 			return
 	
 	if chest_h1 == true:
 		if Input.is_action_just_pressed("ui_accept"):
 			DialogueManager.show_example_dialogue_balloon(load("res://questions/hardquestion_1.dialogue"), "hq1")
+			drop_potion()
 			return
 	
 	if chest_h2 == true:
 		if Input.is_action_just_pressed("ui_accept"):
 			DialogueManager.show_example_dialogue_balloon(load("res://questions/hardquestion_2.dialogue"), "hq2")
+			drop_potion()
 			return
 	
 	if chest_h3 == true:
 		if Input.is_action_just_pressed("ui_accept"):
 			DialogueManager.show_example_dialogue_balloon(load("res://questions/hardquestion_3.dialogue"), "hq3")
+			drop_potion()
 			return
 	
 	if chest_h4 == true:
 		if Input.is_action_just_pressed("ui_accept"):
 			DialogueManager.show_example_dialogue_balloon(load("res://questions/hardquestion_4.dialogue"), "hq4")
+			drop_potion()
 			return
 	
 	if chest_h5 == true:
 		if Input.is_action_just_pressed("ui_accept"):
 			DialogueManager.show_example_dialogue_balloon(load("res://questions/hardquestion_5.dialogue"), "hq5")
+			drop_potion()
 			return
 	
 	if chest_h6 == true:
 		if Input.is_action_just_pressed("ui_accept"):
 			DialogueManager.show_example_dialogue_balloon(load("res://questions/hardquestion_6.dialogue"), "hq6")
+			drop_potion()
 			return
 
 func get_input():
@@ -152,7 +169,7 @@ func current_camera():
 
 
 func _on_player_hitbox_body_entered(body):
-	if body.has_method("enemy") or body.has_method("skeleton"):
+	if body.has_method("enemy") or body.has_method("skeleton") or body.has_method("boss"):
 		enemy_inattack_range = true
 
 	if body.has_method("cheste1"):
@@ -185,13 +202,11 @@ func _on_player_hitbox_body_entered(body):
 	if body.has_method("chesth6"):
 		chest_h6 = true
 
-	if body.has_method("chesth7"):
-		chest_h7 = true
 
 
 
 func _on_player_hitbox_body_exited(body):
-	if body.has_method("enemy") or body.has_method("skeleton"):
+	if body.has_method("enemy") or body.has_method("skeleton") or body.has_method("boss"):
 		enemy_inattack_range = false
 
 	if body.has_method("cheste1"):
@@ -207,25 +222,23 @@ func _on_player_hitbox_body_exited(body):
 		chest_e4 = false
 
 	if body.has_method("chesth1"):
-		chest_h1 = true
+		chest_h1 = false
 
 	if body.has_method("chesth2"):
-		chest_h2 = true
+		chest_h2 = false
 
 	if body.has_method("chesth3"):
-		chest_h3 = true
+		chest_h3 = false
 
 	if body.has_method("chesth4"):
-		chest_h4 = true
+		chest_h4 = false
 
 	if body.has_method("chesth5"):
-		chest_h5 = true
+		chest_h5 = false
 
 	if body.has_method("chesth6"):
-		chest_h6 = true
+		chest_h6 = false
 
-	if body.has_method("chesth7"):
-		chest_h7 = true
 
 func enemy_attack():
 	if enemy_inattack_range and enemy_attack_cooldown == true:
@@ -263,3 +276,7 @@ func _on_regen_timer_timeout():
 
 func _on_area_2d_body_entered(body):
 	get_tree().change_scene_to_file("res://src/OpenWorld/open_world.tscn")
+
+
+func _on_area_2d_2_body_entered(body):
+	get_tree().change_scene_to_file("res://src/BossBattleScene/bossbattleScene.tscn")

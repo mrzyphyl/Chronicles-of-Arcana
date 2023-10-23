@@ -97,3 +97,12 @@ shape = SubResource("RectangleShape2D_gahqd")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(1151, 324)
 shape = SubResource("RectangleShape2D_gahqd")
+
+[node name="Back" type="Button" parent="."]
+offset_left = 33.0
+offset_top = 30.0
+offset_right = 210.0
+offset_bottom = 82.0
+text = "Back"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
